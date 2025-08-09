@@ -3,8 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Apache HTTP Server...
-      - yum update -y
+      - echo Installing Apache HTTP Server..
       - yum install -y httpd
 
   pre_build:
