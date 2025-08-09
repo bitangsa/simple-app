@@ -6,7 +6,6 @@ phases:
       python: 3.9   # or node/java if you need
     commands:
       - echo Installing Apache HTTP Server...
-      - yum update -y
       - yum install -y httpd
       - systemctl enable httpd
       - systemctl start httpd
