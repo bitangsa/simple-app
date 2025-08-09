@@ -3,3 +3,7 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
+hooks:
+  BeforeDeploy:
+    - location: a.sh
+      timeout: 60
