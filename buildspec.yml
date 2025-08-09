@@ -2,20 +2,23 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      python: 3.9   # or node/java if you need
     commands:
-      - echo Installing Apache HTTP Server..
+      - echo Installing Apache HTTP Server...
+      - yum update -y
       - yum install -y httpd
+      - systemctl enable httpd
+      - systemctl start httpd
 
   pre_build:
     commands:
-      - echo Starting Apache...
-      - service httpd start
-      - chmod +x install_httpd.sh
+      - echo Pre-build phase complete
 
   build:
     commands:
-      - echo Copying website files...
-      - cp -r * /var/www/html/
+      - echo Build started on `date`
+      # You can add code compilation or other tasks here
 
   post_build:
     commands:
@@ -23,5 +26,4 @@ phases:
 
 artifacts:
   files:
-    - appspec.yml
     - '**/*'
