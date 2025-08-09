@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      # specify runtime only if needed, e.g., python: 3.9
+    commands:
+      - echo Installing Apache HTTP Server...
+      - yum update -y
+      - yum install -y httpd
+
+  pre_build:
+    commands:
+      - echo Starting Apache...
+      - service httpd start
+
+  build:
+    commands:
+      - echo Copying website files...
+      - cp -r * /var/www/html/
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
