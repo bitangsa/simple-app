@@ -5,5 +5,6 @@ files:
     destination: /var/www/html
 hooks:
   BeforeDeploy:
-    - location: a.sh
-      timeout: 60
+    - location: scripts/install_httpd.sh
+      timeout: 300
+      runas: root
