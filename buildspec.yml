@@ -10,7 +10,7 @@ phases:
     commands:
       - echo Starting Apache...
       - service httpd start
-      - chmod +x /var/www/html/install_httpd.sh
+      - chmod +x install_httpd.sh
 
   build:
     commands:
