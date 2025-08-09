@@ -3,8 +3,7 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-hooks:
-  BeforeDeploy:
-    - location: scripts/install_httpd.sh
-      timeout: 300
-      runas: root
+permissions:
+  - object: /var/www/html
+    owner: root
+    group: root
