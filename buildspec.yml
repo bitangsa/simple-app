@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      # specify runtime only if needed, e.g., python: 3.9
     commands:
       - echo Installing Apache HTTP Server...
       - yum update -y
