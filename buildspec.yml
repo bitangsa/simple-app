@@ -1,28 +1,11 @@
 version: 0.2
-
 phases:
   install:
-    runtime-versions:
-      python: 3.9   # or node/java if you need
     commands:
-      - echo Installing Apache HTTP Server...
-      - yum install -y httpd
-      - systemctl enable httpd
-      - systemctl start httpd
-
-  pre_build:
-    commands:
-      - echo Pre-build phase complete
-
+      - echo Installing dependencies...
   build:
     commands:
       - echo Build started on `date`
-      # You can add code compilation or other tasks here
-
-  post_build:
-    commands:
-      - echo Build completed on `date`
-
 artifacts:
   files:
     - '**/*'
